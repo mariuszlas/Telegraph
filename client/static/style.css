@@ -39,6 +39,10 @@ form {
     font-size: 18px;
 }
 
+#post-info {
+    display: none;
+}
+
 input[type="submit"] {
     padding: 5px 15px;
     background: #fff;
