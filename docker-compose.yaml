@@ -6,7 +6,7 @@ services:
     ports:
       - 3000:3000
     environment:
-      - PGUSER=mariusz_&_corneliu
+      - PGUSER=admin
       - PGHOST=db
       - PGPASSWORD=password
       - PGDATABASE=posts_db
@@ -26,7 +26,7 @@ services:
       - "./db:/docker-entrypoint-initdb.d/:ro"
     environment:
       - POSTGRES_DB=posts_db
-      - POSTGRES_USER=mariusz_&_corneliu
+      - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=password
 volumes:
     dbdata:
