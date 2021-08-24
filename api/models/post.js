@@ -13,7 +13,7 @@ class Post {
             try {
                 const result = await db.query(`INSERT INTO posts (author, title, path, body)
                                                 VALUES ($1, $2, $3, $4)
-                                                RETURNING *`, [data.author, data.title, data.path, data.post]);
+                                                RETURNING *`, [data.author, data.title, data.path, data.body]);
                 const newPost = new Post(result.rows[0]);
                 resolve(newPost);
             } catch (err) {
