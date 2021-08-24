@@ -12,21 +12,23 @@
 </head>
 
 <body>
-  <section id="formSection">
-    <form action="">
-      <label for="title"></label><br>
-      <input type="text" id="title" name="title" placeholder="Title"><br>
-      <label for="name"></label><br>
-      <input type="text" id="name" name="name" placeholder="Your name"><br>
-      <label for="name"></label><br>
-      <input type="text" id="story" name="story" placeholder="Your story..."><br>
-    </form>
-  </section>
+    <main>
+      <section id="formSection">
+        <form id="new-post-form">
+          <label for="title"></label><br>
+          <input type="text" id="title" name="title" placeholder="Title"><br>
+          <label for="name"></label><br>
+          <input type="text" id="name" name="name" placeholder="Your name"><br>
+          <label for="name"></label><br>
+          <input type="text" id="story" name="story" placeholder="Your story..."><br>
+        </form>
+      </section>
 
-  <section id="btnSection">
-    <input type="submit" value="Publish">
-    <p id="warning"></p>
-  </section>
+      <section id="btnSection">
+        <input type="submit" id="publish-btn" form="new-post-form" value="Publish">
+        <p id="warning"></p>
+      </section>
+    </main>
 </body>
 
 </html>
