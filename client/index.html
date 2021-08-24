@@ -6,25 +6,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="static/style.css">
+  <script defer src="static/script.js"></script>
 
   <title>Telegraph</title>
 </head>
 
 <body>
   <section id="formSection">
-    <form action="">
+    <form id="newPostForm">
       <label for="title"></label><br>
-      <input type="text" id="title" name="title" placeholder="Title"><br>
-      <label for="name"></label><br>
-      <input type="text" id="name" name="name" placeholder="Your name"><br>
-      <label for="name"></label><br>
-      <input type="text" id="story" name="story" placeholder="Your story..."><br>
+      <input type="text" id="title" name="title" placeholder="Title" required><br>
+      <label for="user"></label><br>
+      <input type="text" id="user" name="user" placeholder="Your name" required><br>
+      <label for="story"></label><br>
+      <input type="text" id="story" name="story" placeholder="Your story..." required><br>
     </form>
+  </section>
+  <section id="postSection">
+    <p id="titlePost"></p>
+    <p id="userPost"></p>
+    <p id="storyPost"></p>
   </section>
 
   <section id="btnSection">
-    <input type="submit" value="Publish">
+    <input type="submit" value="Publish" id="btn" form="newPostForm">
     <p id="warning"></p>
   </section>
 </body>
