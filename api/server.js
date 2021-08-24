@@ -1,14 +1,10 @@
-const http = require("http");
+const express = require("express");
+const cors = require("cors");
+const router = require("./controllers/router.js");
 
-const requestListener = (request, response) => {
-    response.statusCode = 200;
-    response.end("Client");
-};
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use("/", router);
 
-const host = "localhost";
-const port = 3000;
-
-const server = http.createServer(requestListener);
-server.listen(port, host, () =>
-    console.log(`Server running on port: http://localhost:${host}:${port}!`)
-);
+module.exports = app;
