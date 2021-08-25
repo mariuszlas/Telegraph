@@ -1,8 +1,8 @@
-const Post = require('../models/post.js');
+const Post = require('../../models/post.js');
 const pg = require('pg');
 jest.mock('pg');
 
-const db = require('../dbConfig.js');
+const db = require('../../dbConfig.js');
 
 describe('Post', () => {
     beforeEach(() => jest.clearAllMocks())
