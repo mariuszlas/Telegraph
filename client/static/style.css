@@ -2,9 +2,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
     text-align: center;
     box-sizing: border-box;
+    margin-top: 25px;
 }
 
 input {
@@ -48,6 +48,31 @@ input[type="submit"] {
 
 #postSection {
     display: none;
+}
+
+#titlePost {
+    font-size: 30px;
+}
+
+#userPost {
+    font-size: 12px;
+}
+
+#storyPost {
+    font-size: 18px;
+}
+
+#warning {
+    color: red;
+}
+
+footer {
+    padding: 8px 40px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    font-weight: 900;
 }
 
 @media only screen and (max-width: 600px) {
