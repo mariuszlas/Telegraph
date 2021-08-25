@@ -59,11 +59,10 @@ function  displayPost(data) {
     // format date and url
     const rawDate = data.path.split('-');
     const formatDate = `${rawDate[3]}/${parseInt(rawDate[2])+1}/${rawDate[1]}`;
-    const url = `http://localhost:3000/${data.path}`;
     // add text to each of the p elements in the 'post' section
     const fields = document.querySelectorAll('.postField');
-    const values = [data.title, data.author, data.body, formatDate, url];
+    const values = [data.title, data.author, data.body, formatDate, `#${data.path}`];
     fields.forEach((field, i) => { field.textContent += values[i] });
 }
 
-module.exports = { initBindings, handleForm, sendData, validateInput, updateContent }
+module.exports = { initBindings, handleForm, sendData, validateInput, updateContent, displayPost }
