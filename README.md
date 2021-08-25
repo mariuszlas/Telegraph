@@ -9,3 +9,11 @@
 
 # Tests
 * Run `bash scripts.startTest.sh` to run the test suit
+
+## Bugs
+
+## Wins & Challenges
+
+### Wins
+
+### Challenges
