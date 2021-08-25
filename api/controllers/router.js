@@ -3,6 +3,7 @@ const Post = require('../models/post.js');
 
 const router = express.Router();
 
+// route for getting a post by id
 router.get('/:id', async (req, res) => {
     try {
         const path = req.params.id;
@@ -13,6 +14,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// route for adding a new post
 router.post('/', async (req, res) => {
     try {
         const post = await Post.create(req.body);
