@@ -12,8 +12,8 @@
     "coverage": "jest --coverage"
   },
   "jest": {
-        "testEnvironment": "node"
-    },
+    "testEnvironment": "node"
+  },
   "author": "Mariusz Las & Corneliu Laur",
   "license": "ISC",
   "devDependencies": {
