@@ -23,7 +23,7 @@ describe('api', () => {
     });
 
     it('adds a new post to database', async () => {
-        const res = await request(api).post('/').send({author: 'Jane', title: 'The Wave', path: 'title3-789', post: 'Text of third' })
+        const res = await request(api).post('/').send({user: 'Jane', title: 'The Wave', path: 'title3-789', story: 'Text of third' })
         expect(res.body).toStrictEqual({author: 'Jane', title: 'The Wave', path: 'title3-789', body: 'Text of third' })
     });
 })
