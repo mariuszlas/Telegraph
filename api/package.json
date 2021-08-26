@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "nodemon index.js",
+    "server": "node index.js",
     "test": "jest --setupFiles ./test/integration/testConfig.js --detectOpenHandles",
     "coverage": "jest --coverage"
   },
