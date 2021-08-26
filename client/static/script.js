@@ -44,7 +44,7 @@ function validateInput(formData) {
     Object.values(formData).forEach(value => {
         if (value === "") { throw new Error('One or more input fileds are empty') };
     });
-    formData.path.replace(/ /g, '');
+    formData.path.split(" ").join("");
 }
 
 async function updateContent(path) {
