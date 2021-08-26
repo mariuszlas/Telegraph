@@ -3,6 +3,10 @@ const Post = require('../models/post.js');
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+    res.send('Welcome to telegraph');
+})
+
 // route for getting a post by id
 router.get('/:id', async (req, res) => {
     try {
