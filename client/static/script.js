@@ -65,7 +65,7 @@ function  displayPost(data) {
     const formatDate = `${rawDate[3]}/${parseInt(rawDate[2])+1}/${rawDate[1]}`;
     // add text to each of the p elements in the 'post' section
     const fields = document.querySelectorAll('.postField');
-    const values = [data.title, data.author, data.body, formatDate, `${apiUrl}#${data.path}`];
+    const values = [data.title, data.author, data.body, formatDate, `#${data.path}`];
     fields.forEach((field, i) => { field.textContent += values[i] });
 }
 
