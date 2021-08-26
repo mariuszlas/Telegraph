@@ -22,12 +22,14 @@ function handleForm(e) {
 async function sendData(formData) {
     try {
         validateInput(formData);
-        console.log(formData);
         const options = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+            },
             body: JSON.stringify(formData)
         }
+        console.log(options);
         const res = await fetch(apiUrl, options);
         // redirect to new page
         window.location.hash =  `${formData.path}`;
