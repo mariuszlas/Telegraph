@@ -1,4 +1,5 @@
 const db = require('../dbConfig.js');
+db.connect();
 
 class Post {
     constructor(data) {
