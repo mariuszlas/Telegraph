@@ -1,3 +1,5 @@
+const apiUrl = 'https://lap2-telegraph-api.herokuapp.com/';
+
 initBindings()
 
 function initBindings() {
@@ -26,7 +28,7 @@ async function sendData(formData) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         }
-        const res = await fetch('http://localhost:3000/', options);
+        const res = await fetch(apiUrl, options);
         // redirect to new page
         window.location.hash =  `${formData.path}`;
         initBindings();
@@ -47,7 +49,7 @@ async function updateContent(path) {
     const initSections = document.querySelectorAll('.initSection');
     initSections.forEach(section => { section.style.display = 'none' });
     // fetch data for that post from the server
-    const res = await fetch(`http://localhost:3000/${path}`);
+    const res = await fetch(`${apiUrl}${path}`);
     const jsonData = await res.json();
     displayPost(jsonData);
 }
@@ -61,8 +63,8 @@ function  displayPost(data) {
     const formatDate = `${rawDate[3]}/${parseInt(rawDate[2])+1}/${rawDate[1]}`;
     // add text to each of the p elements in the 'post' section
     const fields = document.querySelectorAll('.postField');
-    const values = [data.title, data.author, data.body, formatDate, `#${data.path}`];
+    const values = [data.title, data.author, data.body, formatDate, `${apiUrl}#${data.path}`];
     fields.forEach((field, i) => { field.textContent += values[i] });
 }
 
-module.exports = { initBindings, handleForm, sendData, validateInput, updateContent, displayPost }
+module.exports = { initBindings, handleForm, sendData, validateInput, updateContent, displayPost };
