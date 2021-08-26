@@ -4,7 +4,7 @@
 ## Installation and Usage
 * Fork or clone this repo
 * Run `bash scripts/startDev.sh` from the root directory to start up the api and database services
-* Open up `index.html` in the web browser to view the client application, try making a new post
+* Go to `http://localhost:8080/` in your web browser to view the client application, try adding a new post
 * Run `bash scripts/teardown.sh` to stop the api and data base services and remove associated volumes
 
 ### Tests
