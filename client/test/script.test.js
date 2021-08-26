@@ -32,22 +32,3 @@ describe("displayPost", () => {
         expect(author.textContent).toBe(testData.author);
     });
 });
-
-// global.fetch = require('jest-fetch-mock');
-// document.documentElement.innerHTML = html.toString();
-//
-// const script = require('../static/script.js');
-//
-// describe('fetch', () => {
-//
-//     beforeEach( () => {
-//         document.documentElement.innerHTML = html.toString();
-//         fetch.resetMocks();
-//     });
-//
-//     it('makes a fetch to telegraph-server to create a new post', async () => {
-//         const testObj = {title: 'Test title', user: 'Test user', story: 'Text content', path:"Test title-20218213421"}
-//         let res = await script.sendData(testObj);
-//         expect(res).toHaveBeenCalledTimes(1);
-//     });
-// })
