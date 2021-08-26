@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ce8ed55c-9acd-476a-b4e9-65ab16da1de1/deploy-status)](https://app.netlify.com/sites/lap2-telegraph/deploys)
+
 # Telegraph
 ### Lap 2 Coding Challenge
 
