@@ -42,8 +42,9 @@ async function sendData(formData) {
 
 function validateInput(formData) {
     Object.values(formData).forEach(value => {
-        if (value === "") { throw new Error('One or more input fileds are empty') }
-    })
+        if (value === "") { throw new Error('One or more input fileds are empty') };
+    });
+    formData.path.replace(/ /g, '');
 }
 
 async function updateContent(path) {
