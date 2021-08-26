@@ -1,32 +1,47 @@
 version: '3'
 services:
-  server:
-    image: node:12.18.4
-    working_dir: /code
-    ports:
-      - 3000:3000
-    environment:
-      - PGUSER=admin
-      - PGHOST=db
-      - PGPASSWORD=password
-      - PGDATABASE=posts_db
-      - PGPORT=5432
-    depends_on:
-      - db
-    volumes:
-      - type: bind
-        source: ./api
-        target: /code
-    command: bash -c "npm install && npm start"
 
-  db:
-    image: postgres:latest
-    volumes:
-      - "dbdata:/var/lib/postgresql/data"
-      - "./db:/docker-entrypoint-initdb.d/:ro"
-    environment:
-      - POSTGRES_DB=posts_db
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=password
+    client:
+        container_name: telegraph_client_1
+        build: ./client
+        image: telegraph-client
+        ports:
+          - 8080:8080
+        working_dir: /code
+        volumes:
+          - type: bind
+            source: ./client
+            target: /code
+        command: ["http-server"]
+
+    server:
+        image: node:latest
+        working_dir: /code
+        ports:
+          - 3000:3000
+        environment:
+          - PGUSER=admin
+          - PGHOST=db
+          - PGPASSWORD=password
+          - PGDATABASE=posts_db
+          - PGPORT=5432
+        depends_on:
+          - db
+        volumes:
+          - type: bind
+            source: ./api
+            target: /code
+        command: bash -c "npm install && npm start"
+
+    db:
+        image: postgres:latest
+        volumes:
+          - "dbdata:/var/lib/postgresql/data"
+          - "./db:/docker-entrypoint-initdb.d/:ro"
+        environment:
+          - POSTGRES_DB=posts_db
+          - POSTGRES_USER=admin
+          - POSTGRES_PASSWORD=password
+
 volumes:
     dbdata:
