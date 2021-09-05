@@ -3,9 +3,13 @@ const path = require("path");
 const html = fs.readFileSync(path.resolve(__dirname, "../index.html"));
 
 document.documentElement.innerHTML = html.toString();
+window.location.hash = '#path';
 const script = require("../static/script");
 
 describe("displayPost", () => {
+
+    
+
     test("check for number of sections", () => {
         const sections = document.querySelectorAll("section");
         expect(sections.length).toBe(3);
