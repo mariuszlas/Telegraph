@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/style.css">
+  <script defer src="static/script.js"></script>
+  <title>Telegraph</title>
+</head>
+
+<body>
+  <main>
+
+    <section id="formSection" class="initSection">
+      <form id="newPostForm">
+        <label for="title"></label><br>
+        <input type="text" id="title" name="title" placeholder="Title"><br>
+
+        <label for="user"></label><br>
+        <input type="text" id="user" name="user" placeholder="Your name"><br>
+
+        <label for="story"></label><br>
+        <input type="text" id="story" name="story" placeholder="Your story..."><br>
+      </form>
+    </section>
+
+    <section id="btnSection" class="initSection">
+      <input type="submit" value="Publish" id="publish-btn" form="newPostForm">
+      <p id="warning"></p>
+    </section>
+
+    <section id="postSection">
+      <p class="postField" id="titlePost"></p>
+      <p class="postField" id="userPost"></p>
+      <p class="postField" id="date"></p>
+      <p class="postField" id="storyPost"></p>
+      <p class="postField" id="url">You can access your post anytime by visiting this link: http://localhost:8080/</p>
+    </section>
+
+  </main>
+
+  <footer class="copyright">
+    <p>&copy; Mariusz Las & Corneliu Laur </a>&mdash; 25.08.2021</p>
+  </footer>
+</body>
+
+</html>
